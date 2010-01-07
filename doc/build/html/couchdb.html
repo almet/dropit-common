@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The CouchDB API &mdash; DropIt! v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DropIt! v1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">DropIt! v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">The CouchDB API</a><ul>
+<li><a class="reference external" href="#drop-it-documents-overview">Drop it! Documents overview</a><ul>
+<li><a class="reference external" href="#notes">Notes</a><ul>
+<li><a class="reference external" href="#fields">Fields</a></li>
+<li><a class="reference external" href="#associated-views">Associated views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/couchdb.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-couchdb-api">
+<h1>The CouchDB API<a class="headerlink" href="#the-couchdb-api" title="Permalink to this headline">¶</a></h1>
+<p>Dropit is powered by a CouchDB documented database. The application is thinked
+to be RESTful, and to work in a distributed system.</p>
+<p>CouchDB comes with two important concept you should know about: <a class="reference external" href="http://books.couchdb.org/relax/design-documents/views">views</a> and
+<a class="reference external" href="http://books.couchdb.org/relax/intro/core-api#Documents">documents</a>. Please have a look at them before going further.</p>
+<div class="section" id="drop-it-documents-overview">
+<h2>Drop it! Documents overview<a class="headerlink" href="#drop-it-documents-overview" title="Permalink to this headline">¶</a></h2>
+<p>Keep in mind that with CouchDB infrastructure, you&#8217;re free to add informations
+to the documents in your own couchdb db copy, but because we need a common base
+to work on, here are the &#8220;specification&#8221; of our documents.</p>
+<p>There&#8217;s different kinds of documents, to distinguish between document types,
+we uses a <cite>doc_type</cite> field in all documents. Here are the full description of
+them:</p>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<p>A note is basically a text, related to a set a subjects, named &#8220;tags&#8221;. It has an
+author and a title.</p>
+<div class="section" id="fields">
+<h4>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><cite>Title</cite>: the title of the note</li>
+<li><cite>Tags</cite> : differents tags about this note</li>
+<li><cite>Content</cite>: the content text of the note</li>
+<li><cite>Author</cite>: the author name</li>
+</ul>
+<p>Ideally, it&#8217;s possible to add many other fields to a note. The first example
+that comes to my mind is a file.</p>
+</div>
+<div class="section" id="associated-views">
+<h4>Associated views<a class="headerlink" href="#associated-views" title="Permalink to this headline">¶</a></h4>
+<p>To work with these notes, Dropit! provides a set of <a class="reference external" href="http://books.couchdb.org/relax/design-documents/views">views</a>:</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">DropIt! v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Alexis Metaireau, Arnaud Bos.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>
