@@ -84,14 +84,14 @@
 </ul>
 </dd>
 </dl>
-<p>For CouchDB, please follow the installation from the CouchDB wiki : <a class="reference external" href="http://wiki.apache.org/couchdb/Installation">http://wiki.apache.org/couchdb/Installation</a>
-For Django, please go read the installation guide on the django documentation site.</p>
-<p>Here is a possible way to install couchdbkit and django piston.</p>
-<blockquote>
-$ cd /opt
-$ hg clone <a class="reference external" href="http://bitbucket.org/benoitc/couchdbkit/">http://bitbucket.org/benoitc/couchdbkit/</a>
+<p>For CouchDB, please follow the installation from the <a class="reference external" href="http://wiki.apache.org/couchdb/Installation">CouchDB wiki</a>
+For Django, please go read the installation guide on the <a class="reference external" href="http://docs.djangoproject.com/en/dev/intro/install/">django installation page</a></p>
+<p>Here is a possible way to install couchdbkit and django piston:</p>
+<div class="highlight-python"><pre>$ cd /opt
+$ hg clone http://bitbucket.org/benoitc/couchdbkit/
 $ python setup.py install
-$ hg clone <a class="reference external" href="http://bitbucket.org/jespern/django-piston/">http://bitbucket.org/jespern/django-piston/</a></blockquote>
+$ hg clone http://bitbucket.org/jespern/django-piston/</pre>
+</div>
 </div>
 <div class="section" id="get-the-dropit-sources-on-github">
 <h2>Get the DropIt Sources on Github<a class="headerlink" href="#get-the-dropit-sources-on-github" title="Permalink to this headline">¶</a></h2>
@@ -108,8 +108,8 @@ $ ln -s /path/to/couchdbkit
 $ ln -s /path/to/piston</pre>
 </div>
 <p>After that, we need to sync our couchdb with information from Drop It!:</p>
-<blockquote>
-$ python manage.py syncdb</blockquote>
+<div class="highlight-python"><pre>$ python manage.py syncdb</pre>
+</div>
 </div>
 </div>
 

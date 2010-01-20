@@ -36,14 +36,13 @@
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference external" href="">The CouchDB API</a><ul>
-<li><a class="reference external" href="#drop-it-documents-overview">Drop it! Documents overview</a><ul>
 <li><a class="reference external" href="#notes">Notes</a><ul>
 <li><a class="reference external" href="#fields">Fields</a></li>
 <li><a class="reference external" href="#associated-views">Associated views</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li><a class="reference external" href="#tags">Tags</a></li>
+<li><a class="reference external" href="#users">Users</a></li>
 </ul>
 </li>
 </ul>
@@ -80,8 +79,6 @@
 to be RESTful, and to work in a distributed system.</p>
 <p>CouchDB comes with two important concept you should know about: <a class="reference external" href="http://books.couchdb.org/relax/design-documents/views">views</a> and
 <a class="reference external" href="http://books.couchdb.org/relax/intro/core-api#Documents">documents</a>. Please have a look at them before going further.</p>
-<div class="section" id="drop-it-documents-overview">
-<h2>Drop it! Documents overview<a class="headerlink" href="#drop-it-documents-overview" title="Permalink to this headline">¶</a></h2>
 <p>Keep in mind that with CouchDB infrastructure, you&#8217;re free to add informations
 to the documents in your own couchdb db copy, but because we need a common base
 to work on, here are the &#8220;specification&#8221; of our documents.</p>
@@ -89,11 +86,11 @@ to work on, here are the &#8220;specification&#8221; of our documents.</p>
 we uses a <cite>doc_type</cite> field in all documents. Here are the full description of
 them:</p>
 <div class="section" id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <p>A note is basically a text, related to a set a subjects, named &#8220;tags&#8221;. It has an
 author and a title.</p>
 <div class="section" id="fields">
-<h4>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h4>
+<h3>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><cite>Title</cite>: the title of the note</li>
 <li><cite>Tags</cite> : differents tags about this note</li>
@@ -104,10 +101,19 @@ author and a title.</p>
 that comes to my mind is a file.</p>
 </div>
 <div class="section" id="associated-views">
-<h4>Associated views<a class="headerlink" href="#associated-views" title="Permalink to this headline">¶</a></h4>
+<h3>Associated views<a class="headerlink" href="#associated-views" title="Permalink to this headline">¶</a></h3>
 <p>To work with these notes, Dropit! provides a set of <a class="reference external" href="http://books.couchdb.org/relax/design-documents/views">views</a>:</p>
 </div>
 </div>
+<div class="section" id="tags">
+<h2>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s no users information stored directly in the couch, but our couch refers
+to some users. Strange isn&#8217;t it ? Don&#8217;t be so sure, there is an explaination:</p>
+<p>Because on how CouchDB is made, users aren&#8217;t stored within the couch, but are
+stored in an external DB.</p>
 </div>
 </div>
 

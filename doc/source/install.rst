@@ -13,10 +13,10 @@ Then, you have to get the dependencies:
  * couchdbkit
  * django-piston
 
-For CouchDB, please follow the installation from the CouchDB wiki : http://wiki.apache.org/couchdb/Installation
-For Django, please go read the installation guide on the django documentation site. 
+For CouchDB, please follow the installation from the `CouchDB wiki`_ 
+For Django, please go read the installation guide on the `django installation page`_
 
-Here is a possible way to install couchdbkit and django piston.
+Here is a possible way to install couchdbkit and django piston::
 	
 	$ cd /opt
 	$ hg clone http://bitbucket.org/benoitc/couchdbkit/	
@@ -43,6 +43,9 @@ Be sure that your application contains symlinks to the dependencies::
 	$ ln -s /path/to/piston
 
 
-After that, we need to sync our couchdb with information from Drop It!:
+After that, we need to sync our couchdb with information from Drop It!::
 	
-	$ python manage.py syncdb 
+	$ python manage.py syncdb
+
+.. _`CouchDB wiki`: http://wiki.apache.org/couchdb/Installation
+.. _`django installation page`: http://docs.djangoproject.com/en/dev/intro/install/
