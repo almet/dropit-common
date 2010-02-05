@@ -5,5 +5,6 @@ class Note(Document):
     title = StringProperty(required=True)
     content = StringProperty(required=True)
     tags = StringListProperty()
+
     def __unicode__():
         return self.title+":\n"+content

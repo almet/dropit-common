@@ -1,18 +1,11 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
+ADMINS = ()
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = 'dropit.sql'
-DATABASE_USER = ''
-DATABASE_PASSWORD = ''
-DATABASE_HOST = ''
-DATABASE_PORT = ''
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en-us'
@@ -42,10 +35,11 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'djangoapp.urls'
 
+import os.path
+PROJECT_ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
+
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
