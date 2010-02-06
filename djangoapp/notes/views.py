@@ -2,6 +2,8 @@ from django.shortcuts import render_to_response as render
 from django.template import RequestContext, loader, Context 
 from django.utils.encoding import smart_str, force_unicode
 
+from couchdbkit.ext.django.loading import get_db
+
 from notes.forms import NoteForm 
 from notes.models import Note
 from utils.shortcuts import get_object_or_404
@@ -46,9 +48,13 @@ def show_note(request, note_id):
         from docutils.core import publish_parts
         parts = publish_parts(source=smart_str(note.content), writer_name="html4css1")
         note.content = force_unicode(parts["html_body"])
+        
+    revisions = get_db("notes").doc_revisions(note_id)['_revisions']
     
     return render("show_note.html", {
         "note": note,
+        "has_revisions" : revisions['start'] > 1,
+        "revisions": revisions['ids'],
     })
 
 def edit_note(request, note_id):

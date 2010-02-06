@@ -17,3 +17,16 @@
 {% block submenuitems %}
 <li><a href="{% url notes:edit note.get_id %}">{% trans "edit this note" %}</a></li>
 {% endblock %}
+
+{% if has_revisions %}
+{% block menufooter %}
+<h3> {% trans "Versions" %}</h3>
+<p class="small">{% trans "There is different version of your document, and you can browse them here" %}:</p>
+<ul>
+{% for revision in revisions %}
+    <li>{{ revision }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% endif %}
+

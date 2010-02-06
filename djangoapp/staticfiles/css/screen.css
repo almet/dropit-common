@@ -1,6 +1,6 @@
 #content h2 {
     font-weight: bold;
-    
+    text-shadow:  #DDD 2px 5px 2px;
 }
 
 #note h1 {
@@ -28,4 +28,8 @@ ul.tags li{
     padding: 2px 8px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+ul.tags li:hover{
+    background-color: #dadada;
 }
