@@ -1,10 +1,13 @@
 from couchdbkit.ext.django.schema import *
 
 class Note(Document):
-    """Represent a Note"""
+    """Represents a Note document
+    
+    """
     title = StringProperty(required=True)
     content = StringProperty(required=True)
-    tags = StringListProperty()
+    tags = ListProperty()
+    format = StringProperty()
 
     def __unicode__():
-        return self.title+":\n"+content
+        return self.title+":\n"+self.content

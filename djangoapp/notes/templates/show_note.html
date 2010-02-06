@@ -1,4 +1,19 @@
-{% extends "base.html" %}
+{% extends "basenotes.html" %}
+{% load i18n %}
 {% block content %}
-    
+<h2>{{ note.title }}</h2>
+{% if note.tags %}
+<ul class="tags">
+{% for tag in note.tags %}
+<li>{{ tag }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+<div id="note" class="span-18">
+    <p> {{note.content|safe}} </p>
+</div>
+{% endblock %}
+
+{% block submenuitems %}
+<li><a href="{% url notes:edit note.get_id %}">{% trans "edit this note" %}</a></li>
 {% endblock %}

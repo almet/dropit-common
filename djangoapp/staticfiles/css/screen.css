@@ -1,0 +1,31 @@
+#content h2 {
+    font-weight: bold;
+    
+}
+
+#note h1 {
+    font-size: 1.8em;
+}
+
+#note h2 {
+    font-size: 1.6em;
+    font-style: italic;
+}
+
+#note h3 {
+    font-size: 1.5em;
+    font-style: italic;    
+}
+ul.tags{
+    float: right;
+}
+
+ul.tags li{
+    float: left; 
+    list-style-type: none;
+    margin: 0 10px;
+    background-color: #eaeaea;
+    padding: 2px 8px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

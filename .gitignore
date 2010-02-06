@@ -1,3 +1,6 @@
 *~
 *.pyc
 djangoapp/dropit.sql
+djangoapp/couchdbkit
+djangoapp/django
+doc/build/

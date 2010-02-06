@@ -4,14 +4,14 @@ Welcome to the DropIt's documentation!
 Dropit! is an application to manage your notes, easily. It comes with a django
 website, a python library and a php client. 
 
-It has been thinked to work in a distributed environment (thanks to couchdb), 
-and to be interoperable with existing note's applications.
+.. image:: architecture/dropit.png
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
    
+   prerequires
    install   
    couchdb
    djangosite

@@ -1,10 +1,34 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<title>{% block title %}Drop your ideas right now !{% endblock %}</title>
+<title>{% block title %}{% trans "welcome title" %}{% endblock %}</title>
+<link rel="stylesheet" href="/site_media/css/blueprint/screen.css" type="text/css" media="screen, projection"> 
+<link rel="stylesheet" href="/site_media/css/blueprint/print.css" type="text/css" media="print"> 
+<!--[if lt IE 8]><link rel="stylesheet" href="/site_media/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]--> 
+<link rel="stylesheet" type="text/css" href="/site_media/css/screen.css" media="screen" />
 </head>
 <body>
-{% block content %}
-    
+<div class="container" class="span-24">
+{% block header %}
+<a href=" {% url home %} "><h1>Drop It ! <span class="small">... and go away, brrr.</span> </h1></a>
+<hr>
 {% endblock %}
+    <div id="content" class="span-18">
+        {% block content %}{% endblock %}
+    </div>
+    {% block menu %}    
+    <div id="menu" class="span-6 last">
+    <h3>Actions</h3>
+        <ul>
+            <li><a href="{% url home  %}">{% trans "back home" %}</a></li>
+            {% block menuitems %}
+        {% endblock %}
+        </ul>
+    </div>
+    {% endblock %}
+    <div id="footer"></div>
+</div>
 </body>
 </html>

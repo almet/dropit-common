@@ -30,7 +30,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
 #    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 ROOT_URLCONF = 'djangoapp.urls'
@@ -42,16 +41,24 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT_PATH, 'templates'),
 )
 
+STATIC_DOC_ROOT = os.path.join(PROJECT_ROOT_PATH, 'staticfiles')
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.messages',
     'couchdbkit.ext.django',
     'notes',
+    'gunicorn',
 )
 
 COUCHDB_DATABASES = (
     ('notes', 'http://127.0.0.1:5984/dropit'),
+)
+
+NOTES_FORMATS = (
+    ('markdown','Markdown'), 
+    ('fulltext','Full Text'), 
+    ('rst', 'ReSTructured Text')
 )

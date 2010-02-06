@@ -1,9 +1,29 @@
-{% extends "base.html" %}
+{% extends "basenotes.html" %}
+{% load i18n %}
 {% block content %}
-    
+<h2>{% trans "Adding a note" %}</h2>
 <form method="post">
-{{ form.as_p }}
-<button>add</button>
+<div class="span-6">
+    {{ form.title.errors }}
+    <label for="id_title"> {% trans "Title" %}:</label>
+    {{ form.title }}
+</div>
+<div class="span-6">
+    {{ form.tags.errors }}
+    <label for="id_tags">{% trans "Tags" %}:</label>
+    {{ form.tags }}
+</div>
+<div class="span-6 last">
+    {{ form.format.errors }}
+    <label for="id_format"> {% trans "Format" %}:</label>
+    {{ form.format }}
+</div>
+<div class="span-18">
+    {{ form.content.errors }}
+    <label for="id_content"> {% trans "Content" %}:</label></br>
+    {{ form.content }}
+</div>
+<button>{% trans "drop it !" %}</button>
 </form>
 
 {% endblock %}

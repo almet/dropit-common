@@ -1,16 +1,20 @@
-{% extends "base.html" %}
+{% extends "basenotes.html" %}
+{% load i18n %}
 {% block content %}
-    
-<h3>Here's a list of all notes you wrote</h3>
+<h3>{% trans "Here is a list of all your notes" %}</h3>
+{% if notes %}
 <ul>
 {% for note in notes %}
     <li>
         <a href='{% url notes:show note.get_id %}'>{{note.title}} </a>
         <ul id='actions-{{note.get_id}}'>
-            <li class='show'><a href='{% url notes:show note.get_id %}'>show</a></li>
-            <li class='remove'><a href='{% url notes:remove note.get_id %}'>remove</li>                
+            <li class='show'><a href='{% url notes:show note.get_id %}'> {% trans "show note" %} </a></li>
+            <li class='remove'><a href='{% url notes:remove note.get_id %}'> {% trans "remove" %} </li>                
         </ul>
     </li>
 {% endfor %}
 </ul>
+{% else %}
+{% trans "there's no notes, yet." %}    
+{% endif %}
 {% endblock %}
