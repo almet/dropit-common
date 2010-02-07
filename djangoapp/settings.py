@@ -50,7 +50,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'couchdbkit.ext.django',
     'notes',
-    'gunicorn',
 )
 
 COUCHDB_DATABASES = (

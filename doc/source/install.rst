@@ -3,49 +3,89 @@ How to install Drop It !
 
 Here are few steps needed to set up Drop It ! the right way.
 
-
-Dependencies
-------------
-
-Then, you have to get the dependencies:
- * CouchDB
- * django 1.1
- * couchdbkit
- * django-piston
+Couchdb
+--------
 
 For CouchDB, please follow the installation from the `CouchDB wiki`_ 
-For Django, please go read the installation guide on the `django installation page`_
 
-Here is a possible way to install couchdbkit and django piston::
-	
-	$ cd /opt
-	$ hg clone http://bitbucket.org/benoitc/couchdbkit/	
-	$ python setup.py install
-	$ hg clone http://bitbucket.org/jespern/django-piston/
+pip & virtualenv
+-----------------
 
+The virtualenv utility creates virtual Python instances, each invokable
+with its own Python executable.  Each instance can have different sets
+of modules, installable via easy_install.  Virtual Python instances can
+also be created without root access.
+
+Be sure to have pip installed. On debian systems::
+
+    $ sudo aptitude install python-pip
+
+Once pip installed, install virtualenv::
+
+    $ sudo pip install virtualenv
+
+Create and activate a new virtualenv
+-------------------------------------
+
+::
+
+    $ virtualenv --no-site-packages dropit
+    $ source dropit/bin/activate
+    $ cd dropit
+
+Django
+------
+
+Django is the python webframework that provides the python dropit client.
+::
+    
+    $ pip install django
+
+
+Sphinx Doc
+----------
+
+Sphinx allows you to generate the documentation.
+::
+
+    $ pip install sphinx
+
+
+Couchdbkit
+----------
+
+Couchdbkit is a python library to relies on couchdb::
+
+    $ pip install couchdbkit
 
 Get the DropIt Sources on Github
 --------------------------------
 
 Be sure to get the last version, on github::
 	
-	$ git clone http://github.com/ametaireau/Drop-It-- dropit
+	$ git clone http://github.com/ametaireau/Drop-It--.git dropit
 
 
-Symlink !
----------
+Generate the doc
+-----------------
 
-Be sure that your application contains symlinks to the dependencies::
+    $ cd dropit/doc
+    $ make html
 
-	$ cd dropit/djangoapp/
-	$ ln -s /path/to/django
-	$ ln -s /path/to/couchdbkit
-	$ ln -s /path/to/piston
+Your doc is now ready, HTML pages are in build/html.
 
 
-After that, we need to sync our couchdb with information from Drop It!::
+Start the python app
+---------------------
+
+After that, we need to sync our couchdb with information from Drop It!
+
+Go into the djangoapp folder and type::
 	
 	$ python manage.py syncdb
+    $ python manage.py runserver
+
+And you will see the app runing! Enjoy.
 
 .. _`CouchDB wiki`: http://wiki.apache.org/couchdb/Installation
 .. _`django installation page`: http://docs.djangoproject.com/en/dev/intro/install/
