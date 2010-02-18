@@ -53,7 +53,7 @@ But it's not the end ;)::
     $ make && sudo make install
 
 Now CouchDB is fully installed and you can start it, but before giving you the right command,
-I'm gonna devide the following step in two categories like I said before :
+I'm gonna devide the following step in two categories like I said before
     - People who wants access CouchDB from the machine where it's installed
     - People who wants access CouchDB (installed on a virtual machine) from their physical machine
 
