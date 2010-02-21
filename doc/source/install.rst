@@ -3,14 +3,8 @@ How to install Drop It !
 
 Here are few steps needed to set up Drop It ! the right way.
 
-Couchdb
+CouchDB
 --------
-
-I decided to devide the install of CouchDB in two categories :
-    - "Normal" installation on a physical machine
-    - "Distant" installation, on a virtual machine (like I did)
-
-The firsts steps are the same, so ...
 
 Prepare your environment for CouchDB::
 
@@ -52,12 +46,66 @@ But it's not the end ;)::
 
     $ make && sudo make install
 
-Now CouchDB is fully installed and you can start it, but before giving you the right command,
-I'm gonna devide the following step in two categories like I said before
-    - People who wants access CouchDB from the machine where it's installed
-    - People who wants access CouchDB (installed on a virtual machine) from their physical machine
+Now CouchDB is fully installed and you can start it::
+
+    $ couchdb -b
+
+You should get this::
+
+    $ Apache CouchDB has started, time to relax.
+
+Verify that it is correctly installed via the following url http://127.0.0.1:5984/_utils/index.html
 
 For more details on How to install CouchDB, please follow the installation from the `CouchDB wiki`_ 
+
+Configure CouchDB
+-----------------
+
+Some members of our team don't use CouchDB the same way, some didn't want to install CouchDB directly on their physical machine.
+For those kind of people the use of a virtual machine is a good alternative.
+To realize such an operation you need three things
+    - Have a virtual machine well configurated which you can access from your network
+    - Follow the step before in order to install CouchDB
+    - And finally configure a (very) little CouchDB
+
+So, here we are !
+Let's assume that your virtual machine ip on your network is 192.168.1.24
+Under the /usr/local/etc/couchdb/default.ini file, change the ip address by the ip of your machine over the network.
+Example::
+
+    $ [httpd]
+    $ port = 5984
+    $ bind_address = 127.0.0.1
+
+Become::
+
+    $ [httpd]
+    $ port = 5984
+    $ bind_address = 192.168.1.24
+
+Now under the /usr/local/etc/couchdb/local.ini file, change the ip address again::
+
+    $ [httpd]
+    $ ;port = 5984
+    $ ;bind_address = 127.0.0.1
+
+Become::
+
+    $ [httpd]
+    $ ;port = 5984
+    $ ;bind_address = 192.168.1.24
+
+Now stop and restart CouchDB::
+
+    $ couchdb -d
+    $ couchdb -b
+
+You should get this::
+
+    $ Apache CouchDB has started, time to relax.
+
+And verify that the configuration works well by accessing http://virtual_machine_ip:5984/_utils/index.html from your physical machine.
+Here in our example, virtual_machine_ip stands for 192.168.1.24
 
 pip & virtualenv
 -----------------
