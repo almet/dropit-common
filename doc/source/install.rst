@@ -62,16 +62,21 @@ Configure CouchDB
 -----------------
 
 Some members of our team don't use CouchDB the same way, some didn't want to install CouchDB directly on their physical machine.
+
 For those kind of people the use of a virtual machine is a good alternative.
-To realize such an operation you need three things :
-``````
+
+To realize such an operation you need three things
+
 * Have a virtual machine well configurated which you can access from your network
 * Follow the step before in order to install CouchDB
 * And finally configure a (very) little CouchDB
 
 So, here we are !
+
 Let's assume that your virtual machine ip on your network is 192.168.1.24
+
 Under the /usr/local/etc/couchdb/default.ini file, change the ip address by the ip of your machine over the network.
+
 Example::
 
     $ [httpd]
@@ -106,6 +111,7 @@ You should get this::
     $ Apache CouchDB has started, time to relax.
 
 And verify that the configuration works well by accessing http://virtual_machine_ip:5984/_utils/index.html from your physical machine.
+
 Here in our example, virtual_machine_ip stands for 192.168.1.24
 
 pip & virtualenv
