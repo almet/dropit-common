@@ -1,7 +1,7 @@
 {% extends "basenotes.html" %}
 {% load i18n %}
 {% block content %}
-<h2>{% trans "Adding a note" %}</h2>
+{% block subtitle %}<h2>{% trans "Editing a note" %}</h2>{% endblock %}
 <form method="post">
 <div class="span-6">
     {{ form.title.errors }}

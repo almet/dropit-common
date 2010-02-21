@@ -16,6 +16,7 @@
 
 {% block submenuitems %}
 <li><a href="{% url notes:edit note.get_id %}">{% trans "edit this note" %}</a></li>
+<li><a href="{% url notes:delete note.get_id %}">{% trans "delete this note" %}</a></li>
 {% endblock %}
 
 {% if has_revisions %}
@@ -24,7 +25,7 @@
 <p class="small">{% trans "There is different version of your document, and you can browse them here" %}:</p>
 <ul>
 {% for revision in revisions %}
-    <li>{{ revision }}</li>
+    <li><a href="{% url notes:show note.get_id revision %}">{{ revision }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

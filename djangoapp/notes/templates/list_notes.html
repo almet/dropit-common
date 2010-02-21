@@ -3,17 +3,23 @@
 {% block content %}
 <h3>{% trans "Here is a list of all your notes" %}</h3>
 {% if notes %}
-<ul>
+<table id="notes">
+<thead>
+    <tr><th>{% trans "title" %}</th><th>{% trans "actions" %}</th></tr>
+</thead>
+<tbody>
 {% for note in notes %}
-    <li>
-        <a href='{% url notes:show note.get_id %}'>{{note.title}} </a>
-        <ul id='actions-{{note.get_id}}'>
-            <li class='show'><a href='{% url notes:show note.get_id %}'> {% trans "show note" %} </a></li>
-            <li class='remove'><a href='{% url notes:remove note.get_id %}'> {% trans "remove" %} </li>                
-        </ul>
-    </li>
+<tr class="{% cycle "even" "odd" %}">
+    <td><a href='{% url notes:show note.get_id %}'>{{note.title}} </a></td>
+    <td>
+        <a href='{% url notes:show note.get_id %}'> {% trans "show" %} </a> - 
+        <a href='{% url notes:edit note.get_id %}'> {% trans "edit" %}</a> -             
+        <a href='{% url notes:delete note.get_id %}'> {% trans "delete" %}</a>
+    </td>
+</tr>
 {% endfor %}
-</ul>
+</tbody>
+</table>
 {% else %}
 {% trans "there's no notes, yet." %}    
 {% endif %}

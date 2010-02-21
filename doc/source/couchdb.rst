@@ -2,7 +2,7 @@ The CouchDB API
 ===============
 
 Dropit is powered by a CouchDB documented database. The application is thinked
-to be RESTful, and to work in a distributed system. 
+to be RESTful, and to work in a distributed way. 
 
 CouchDB comes with two important concept you should know about: views_ and 
 documents_. Please have a look at them before going further.

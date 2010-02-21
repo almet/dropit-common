@@ -38,11 +38,11 @@ def list_notes(request):
     })
 
 
-def show_note(request, note_id):
+def show_note(request, note_id, rev=None):
     """Display a note in detail
 
     """
-    note = get_object_or_404(Note, note_id)
+    note = get_object_or_404(Note, note_id, rev=rev)
     
     if note.format == "rst":
         from docutils.core import publish_parts
@@ -50,17 +50,25 @@ def show_note(request, note_id):
         note.content = force_unicode(parts["html_body"])
         
     revisions = get_db("notes").doc_revisions(note_id)['_revisions']
-    
     return render("show_note.html", {
         "note": note,
-        "has_revisions" : revisions['start'] > 1,
+        "has_revisions" : revisions['start'] > 2,
         "revisions": revisions['ids'],
     })
 
-def edit_note(request, note_id):
-    pass
+def edit_note(request, note_id, rev=None):
+    
+    if request.method == "POST":
+            
+    else:        
+        note = get_object_or_404(Note, note_id, rev)
+        form = NoteForm(initial=note)
+    
+    return render("edit_note.html", {
+        "form": form,
+    })
 
-def remove_note(request, note_id):
+def delete_note(request, note_id):
     """Delete a note and redirect to the list of notes
 
     """
