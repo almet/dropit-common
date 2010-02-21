@@ -63,10 +63,10 @@ Configure CouchDB
 
 Some members of our team don't use CouchDB the same way, some didn't want to install CouchDB directly on their physical machine.
 For those kind of people the use of a virtual machine is a good alternative.
-To realize such an operation you need three things
-    - Have a virtual machine well configurated which you can access from your network
-    - Follow the step before in order to install CouchDB
-    - And finally configure a (very) little CouchDB
+To realize such an operation you need three things :
+* Have a virtual machine well configurated which you can access from your network
+* Follow the step before in order to install CouchDB
+* And finally configure a (very) little CouchDB
 
 So, here we are !
 Let's assume that your virtual machine ip on your network is 192.168.1.24
