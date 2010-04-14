@@ -1,4 +1,4 @@
 function(doc) {
-	if(doc.doc_type == "Note")
+	if(doc.itemType == "note")
 		emit(doc.title,doc)
 }
