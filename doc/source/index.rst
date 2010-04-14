@@ -17,12 +17,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   prerequires
    install   
-   couchdb
-   djangosite
-   phpsite
-   pythonlib
-   phplib
-   api
+   dropit-api
 
