@@ -15,8 +15,8 @@ There's different kinds of documents, to distinguish between document types,
 we uses a `doc_type` field in all documents. Here are the full description of 
 them:
 
-Tables / Users
---------------
+Databases / Users
+-----------------
 
 Dropit consider having a table by user. As it's pretty simple to create new
 databases, it seems to be a good idea.
