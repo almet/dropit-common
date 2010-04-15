@@ -19,4 +19,7 @@ Contents:
    
    install   
    dropit-api
+   note
+   conflicts
+   todo
 
