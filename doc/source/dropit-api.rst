@@ -2,17 +2,17 @@ The CouchDB API
 ===============
 
 Dropit is powered by a CouchDB documented database. The application is thinked
-to be RESTful, and to work in a distributed way. 
+to be RESTful, and to work in a distributed way.
 
-CouchDB comes with two important concept you should know about: views_ and 
+CouchDB comes with two important concept you should know about: views_ and
 documents_. Please have a look at them before going further.
 
 Keep in mind that with CouchDB infrastructure, you're free to add informations 
 to the documents in your own couchdb db copy, but because we need a common base 
 to work on, here are the 'specification' of our documents.
 
-There's different kinds of documents, to distinguish between document types, 
-we uses a `doc_type` field in all documents. Here are the full description of 
+There's different kinds of documents, to distinguish between document types,
+we uses a `doc_type` field in all documents. Here are the full description of
 them:
 
 Databases / Users
@@ -32,7 +32,7 @@ The notes are defined in the note.rst doc.
 Associated views
 ----------------
 
-To work with these notes, Dropit! provides a set of views_ you can find in the 
+To work with these notes, Dropit! provides a set of views_ you can find in the
 `_design` folder on the dropit-common repository.
 
 notes:
