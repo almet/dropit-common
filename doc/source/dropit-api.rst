@@ -54,7 +54,8 @@ Here is a list of all other known fields:
 It's interestant to see the standard defined by desktopcouch here: http://www.freedesktop.org/wiki/Specifications/desktopcouch/note
 
 Associated views
-````````````````
+----------------
+
 To work with these notes, Dropit! provides a set of views_ you can find in the 
 `_design` folder on the dropit-common repository.
 
