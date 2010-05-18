@@ -27,7 +27,8 @@ Each database is named with the name of the user. for instance, the user
 Notes
 -----
 
-The notes are defined in the note.rst doc. 
+Please, refer to `the Note's specification document <note.html>`_ to get more 
+informations about notes.
 
 Associated views
 ----------------

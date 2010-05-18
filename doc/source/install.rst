@@ -1,10 +1,15 @@
 How to install Drop It !
 ========================
 
-Here are few steps needed to set up Drop It ! the right way.
+Here are installation instruction to have a CouchDb node of Dropit.
 
-CouchDB
---------
+Install on Android
+-------------------
+
+http://apage43.github.com/
+
+Install CouchDB from sources
+-----------------------------
 
 Prepare your environment for CouchDB::
 

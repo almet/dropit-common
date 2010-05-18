@@ -1,25 +1,14 @@
 Todo list
 =========
 
-2010-04-15
-----------
+Here is  a list of things to do before the final release of dropit.
 
-Triggering and conflict management:
-    Javascript function to handle conflicts.
+* Triggering and conflict management: when a note is synced in two 
+  couchdb instances, and updated in both places, we are in a conflict 
+  state. CouchDB provide a way to handle this, but application have to 
+  imlement a part of this procedure in order to make this work.
 
-        * get the conflicts (write the view) 
-        * change the older one to a "revision".
-        * make the newer one point to the older one.
-
-        Think it can have more than 2 conflict documents at the same time.
-        conflicts.rst
-
-    Christophe
-
-Views:
-    Do the view that list all the notes. Rename it to "notes"
-
-Tags:
-    Learn how to write view/reduce that can count/group items.
-
-
+* Have a simple CRUD system for notes. (Add/Delete/Edit/Show)
+* Handle tags
+* Write couchdb views for tags
+* Make a simple presentation of the project
