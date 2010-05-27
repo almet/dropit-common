@@ -14,7 +14,6 @@ of each note.
     * `title`: the title of the note
     * `tags` : differents tags about this note
     * `content`: the content text of the note
-    * `content_format`: the input format of the text
     * `date`: the date of the current note
     * `doc_type`: 'http://dropit.notmyidea.org/note'
     * `is_head` : true/false
@@ -48,7 +47,7 @@ For instance, let's imagine we have to persons who have the same document id
 on different couchdb databases, the document with the id `A`.
 
 If both persons edit the same document on different databases, we will have one 
-the couchdb1 and couchdb2, a document with the id `1-A`. When replicating the 
+the couchdb1 and couchdb2, a document with the id `A`. When replicating the 
 document on both databases, this will create a conflict, and we know how to 
 resolve these conflicts.
 
