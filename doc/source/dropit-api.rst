@@ -36,19 +36,25 @@ Associated views
 To work with these notes, Dropit! provides a set of views_ you can find in the
 `_design` folder on the dropit-common repository.
 
-notes:
-    Return all documents for an user (inside a DB)
-by_rev:
-    Return all the revisions in the db.
+heads:
+    Return all heading notes. So, 1 note per group of note/revision
+by_root:
+    Return all notes, with a key about their root.
+history:
+    List the history of all revisions, with [doc.root_note and doc.rev_number] 
+    as key.
 conflicts:
     Return the documents that are in a conflict state. This is useful for
     replication process. The client have to implement a method to handle the
     conflicts on the db and to resolve them. See the conflict.rst doc to know
     more.
 tags:
-    Return all the existing tags for the user.
+    Return all the existing tags within the db.
 by_tag:
     Return all the notes tagged with specific tags.
+    Reduce by default.
+summary:
+    Return a simple summary of all existing notes (heads only).
 
 .. _views: http://books.couchdb.org/relax/design-documents/views
 .. _documents: http://books.couchdb.org/relax/intro/core-api#Documents
